@@ -92,7 +92,7 @@ function Navbar(){
             ) : (
               <>
                 <div className={style.mobileBurgerBarLeft}></div>
-                <div className={style.mobileBurgerBar}></div>
+                <div className={style.mobileBurgerBarCenter}></div>
                 <div className={style.mobileBurgerBarRight}></div>
               </>
             )}

@@ -141,5 +141,17 @@
     transform:rotate(-45deg);
     transition: all 1s ease-in-out;
 }
+.mobileBurgerBarCenter{
+     background-color: var(--main-primary-light);
+    width: 50px;
+    height: 10px;
+    border-radius: 50px;
+    margin:.5rem;
+    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
+    display: none;
+    
+    transform:rotate(-45deg);
+    transition: all 1s ease-in-out;
+}
 
 

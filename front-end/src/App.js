@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+
 import style from './App.module.css';
-import {useEffect,useState,usestate} from "react"
+import {useEffect,useState} from "react"
 import Navbar from './navbar/navbar';
 
 function App() {
