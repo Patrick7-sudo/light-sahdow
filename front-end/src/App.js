@@ -1,24 +1,36 @@
 import logo from './logo.svg';
-import './App.css';
+import style from './App.module.css';
+import {useEffect,useState,usestate} from "react"
+import Navbar from './navbar/navbar';
 
 function App() {
+  const [width, setWidth] = useState("")
+  const [height, setHeight] = useState("")
+
+  useEffect(()=>{
+    function autoWidth(){
+      setWidth(window.innerWidth)
+    }
+    window.addEventListener("resize",autoWidth)
+
+    autoWidth()
+
+  },[width])
+
+   useEffect(() => {
+     function autoHeight() {
+       setHeight(window.innerHeight);
+     }
+     window.addEventListener("resize", autoHeight);
+
+     autoHeight();
+   }, [height]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className={style.mainBackground} style={{minWidth:`${width}px`, minHeight:`${height}px`}}>
+      <Navbar/>
+        
+    </section>
   );
 }
 

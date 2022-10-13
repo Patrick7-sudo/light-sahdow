@@ -1,0 +1,145 @@
+:root{
+    --main-primary-light:#FF7A00;
+}
+
+.navbarBackground{
+    /* background-color: pink; */
+    min-height: 112px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.colourSwitch{
+    /* background-color: yellow; */
+    padding:.5rem;
+    margin-left:1rem;
+}
+
+.colourSwitchButtonBox{
+    height:67px;
+    width:247px;
+    background-color: var(--main-primary-light);
+    border-radius:50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    box-shadow: -4px 7px 7px rgba(0, 0, 0, 0.4), -1px 1px 5px rgba(255, 255, 255, 0.4);
+}
+
+.eachLetter{
+    font-size: 32px;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: white;
+    text-shadow: -2px 7px 7px rgba(0, 0, 0, 0.8), 1px -1px 5px rgba(255, 255, 255, 0.5);
+}
+
+.flipperButton{
+    position: absolute;
+    background-color: var(--main-primary-light);
+    height:67px;
+    width:123.5px;
+    /* left:0%; */
+    /* filter: drop-shadow(19px 0px 7px rgba(255, 255, 255, .6)); */
+
+}
+
+.burgerMenu{
+    /* background-color: aqua; */
+    padding:.5rem;
+    max-width:80px;
+    max-height: 80px;
+    min-width:80px;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width: 834px) {
+    .burgerMenu{
+        display:none;
+    }
+    .navbarBackground{
+        justify-content: flex-start;
+    }  
+}
+
+@media screen and (max-width: 834px) {
+    .navbarBackground{
+        justify-content: space-between;
+    } 
+    .colourSwitchButtonBox{
+        width:159px;
+        height:45px;
+    }
+    .eachLetter{
+        font-size:24px;
+    }
+    .flipperButton{
+        height:45px;
+        width:79.5px;
+    }
+}
+
+.mobileBurgerBar{
+    background-color: var(--main-primary-light);
+    width: 50px;
+    height: 10px;
+    border-radius: 50px;
+    margin:.5rem;
+    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
+    transition: all 1s ease-in-out;
+}
+
+.burgerMenuBarContainer{
+    position: relative;
+    /* background-color: antiquewhite; */
+    width: 70px;
+    height: 70px;
+  
+
+}
+.burgerMenuBarContainerActive{
+    position: relative;
+    /* background-color: antiquewhite; */
+     width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.burgerMenuBarContainer:hover div{
+    transition: all 1s ease-in-out;
+     box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3), 0px 0px 7px rgba(0, 0, 0, 0.4);
+}
+
+.mobileBurgerBarLeft{
+     background-color: var(--main-primary-light);
+    width: 50px;
+    height: 10px;
+    border-radius: 50px;
+    margin:.5rem;
+    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    
+    transform:rotate(45deg);
+    transition: all 1s ease-in-out;
+}
+
+.mobileBurgerBarRight{
+     background-color: var(--main-primary-light);
+    width: 50px;
+    height: 10px;
+    border-radius: 50px;
+    margin:.5rem;
+    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    
+    transform:rotate(-45deg);
+    transition: all 1s ease-in-out;
+}
+
+
