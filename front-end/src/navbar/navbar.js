@@ -67,9 +67,7 @@ function Navbar(){
         <div className={style.burgerMenu}>
           <div
             className={
-              menuBurger
-                ? style.burgerMenuBarContainerActive
-                : style.burgerMenuBarContainer
+               style.burgerMenuBarContainer
             }
             onClick={() => {
               ChangingBurgerMenu();
@@ -82,7 +80,7 @@ function Navbar(){
                     (style.mobileBurgerBar)
                   }
                 ></div>
-                <div className={style.mobileBurgerBar}></div>
+                
                 <div
                   className={
                     (style.mobileBurgerBar)
@@ -92,7 +90,7 @@ function Navbar(){
             ) : (
               <>
                 <div className={style.mobileBurgerBarLeft}></div>
-                <div className={style.mobileBurgerBarCenter}></div>
+                
                 <div className={style.mobileBurgerBarRight}></div>
               </>
             )}

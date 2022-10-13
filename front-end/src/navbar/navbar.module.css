@@ -42,9 +42,6 @@
     background-color: var(--main-primary-light);
     height:67px;
     width:123.5px;
-    /* left:0%; */
-    /* filter: drop-shadow(19px 0px 7px rgba(255, 255, 255, .6)); */
-
 }
 
 .burgerMenu{
@@ -90,8 +87,10 @@
     height: 10px;
     border-radius: 50px;
     margin:.5rem;
-    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -4px 4px 7px rgba(0, 0, 0, 0.2);
     transition: all 1s ease-in-out;
+    position: absolute;
+    margin:.5rem;
 }
 
 .burgerMenuBarContainer{
@@ -99,18 +98,13 @@
     /* background-color: antiquewhite; */
     width: 70px;
     height: 70px;
-  
-
-}
-.burgerMenuBarContainerActive{
-    position: relative;
-    /* background-color: antiquewhite; */
-     width: 70px;
-    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+  
+
 }
+
 .burgerMenuBarContainer:hover div{
     transition: all 1s ease-in-out;
      box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3), 0px 0px 7px rgba(0, 0, 0, 0.4);
@@ -125,7 +119,7 @@
     box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
     position: absolute;
     
-    transform:rotate(45deg);
+    transform:rotate(-45deg);
     transition: all 1s ease-in-out;
 }
 
@@ -138,20 +132,9 @@
     box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
     position: absolute;
     
-    transform:rotate(-45deg);
+    transform:rotate(45deg);
     transition: all 1s ease-in-out;
 }
-.mobileBurgerBarCenter{
-     background-color: var(--main-primary-light);
-    width: 50px;
-    height: 10px;
-    border-radius: 50px;
-    margin:.5rem;
-    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
-    display: none;
-    
-    transform:rotate(-45deg);
-    transition: all 1s ease-in-out;
-}
+
 
 
