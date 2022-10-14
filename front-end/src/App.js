@@ -29,7 +29,6 @@ function App() {
   return (
     <section className={style.mainBackground} style={{minWidth:`${width}px`, minHeight:`${height}px`}}>
       <Navbar/>
-        
     </section>
   );
 }

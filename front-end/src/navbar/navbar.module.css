@@ -6,6 +6,39 @@
     /* background-color: pink; */
     min-height: 112px;
     display: flex;
+    flex-direction: column;
+}
+.navbarBackgroundVisible{
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbarBackgroundInvisible{
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:1rem;
+    overflow: hidden;
+    /* height:80vh; */
+    transition: all 1s ease-in-out;
+}
+.navbaroptionsLeft{
+    /* background-color: bisque; */
+    width:50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.navbaroptionsRight{
+    /* background-color: red; */
+    width:38%;
+    height: 100%;
+    display: flex;
     justify-content: flex-end;
     align-items: center;
 }
@@ -55,6 +88,14 @@
     justify-content: center;
     align-items: center;
 }
+
+.hiddenVisible{
+    display: none;
+    transition: all 1s ease-in-out;
+}
+.beVisible{
+    display: block;
+}
 @media screen and (min-width: 834px) {
     .burgerMenu{
         display:none;
@@ -81,8 +122,20 @@
     }
 }
 
-.mobileBurgerBar{
+.mobileBurgerBarDark{
     background-color: var(--main-primary-light);
+    width: 50px;
+    height: 10px;
+    border-radius: 50px;
+    margin:.5rem;
+    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -4px 4px 7px rgba(0, 0, 0, 0.2);
+    transition: all 1s ease-in-out;
+    position: absolute;
+    margin:.5rem;
+}
+
+.mobileBurgerBarLight{
+    background-color: white;
     width: 50px;
     height: 10px;
     border-radius: 50px;
@@ -110,7 +163,7 @@
      box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3), 0px 0px 7px rgba(0, 0, 0, 0.4);
 }
 
-.mobileBurgerBarLeft{
+.mobileBurgerBarLeftDark{
      background-color: var(--main-primary-light);
     width: 50px;
     height: 10px;
@@ -123,7 +176,20 @@
     transition: all 1s ease-in-out;
 }
 
-.mobileBurgerBarRight{
+.mobileBurgerBarLeftLight{
+     background-color: white;
+    width: 50px;
+    height: 10px;
+    border-radius: 50px;
+    margin:.5rem;
+    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    
+    transform:rotate(-45deg);
+    transition: all 1s ease-in-out;
+}
+
+.mobileBurgerBarRightDark{
      background-color: var(--main-primary-light);
     width: 50px;
     height: 10px;
@@ -135,6 +201,86 @@
     transform:rotate(45deg);
     transition: all 1s ease-in-out;
 }
+
+.mobileBurgerBarRightLight{
+     background-color: white;
+    width: 50px;
+    height: 10px;
+    border-radius: 50px;
+    margin:.5rem;
+    box-shadow: 4px -2px 8px rgba(255, 255, 255, 0.3), -8px 8px 7px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    
+    transform:rotate(45deg);
+    transition: all 1s ease-in-out;
+}
+
+.menuInvisibleP{
+    text-transform: capitalize;
+    font-size: 48px;
+    font-weight: 400;
+    /* background-color: aqua; */
+    margin:20px;
+}
+.menuDark{
+    color:#FF7A00;
+    text-shadow: -4px 7px 7px rgba(0, 0, 0, 0.6), 1px -1px 5px rgba(255, 255, 255, .25);
+    transition: all 1s ease-in-out;
+}
+
+.menuDark:hover{
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(255, 255, 255, .3);
+    transition: all 1s ease-in-out;
+}
+
+.menuLight{
+    color:white;
+    text-shadow: -4px 7px 7px rgba(0, 0, 0, 0.5), 1px -1px 5px rgba(255, 255, 255, 0.6);
+    transition: all 1s ease-in-out;
+}
+
+.menuLight:hover{
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(255, 255, 255, .3);
+    transition: all 1s ease-in-out;
+}
+
+
+.navbarVerticalBarLight{
+    background-color: white;
+    box-shadow:  -4px 7px 7px rgba(0, 0, 0, 0.5), 1px -1px 5px rgba(255, 255, 255, .25);
+    width:10px;
+    height:548px;
+    border-radius:50px;
+    transition: all 1s ease-in-out;
+    overflow: hidden;
+
+}
+.navbarVerticalBarDark{
+    background-color: var(--main-primary-light);
+    box-shadow:  -4px 7px 7px rgba(0, 0, 0, 0.4), 1px -1px 5px rgba(255, 255, 255, .25);
+    width:10px;
+    height:548px;
+    border-radius:50px;
+    transition: all 1s ease-in-out;
+}
+
+.flowingInAnimation{
+    animation: 3s smoothFlowing ease-in-out forwards;
+}
+.flowingOutAnimation{
+    animation: 3s smoothFlowingOut ease-in-out forwards;
+}
+
+@keyframes smoothFlowing{
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes smoothFlowingOut{
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
 
 
 

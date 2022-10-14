@@ -4,6 +4,9 @@ import {useState} from "react"
 function Navbar(){
     const [light, setLight] =useState(false)
     const [menuBurger,setMenuBurger] = useState(false)
+    const [slowFade, setSlowFade]= useState(true)
+
+    const menuOptions=['home','about me','services','projects','contact me']
 
     function ChangingLightOptions(){
         if(light){
@@ -15,85 +18,152 @@ function Navbar(){
 
     function ChangingBurgerMenu() {
       if (menuBurger) {
-        setMenuBurger(false);
+        setSlowFade(true)
+         setTimeout(() => {
+           setMenuBurger(false);
+         }, 3000);
       } else {
         setMenuBurger(true);
+        setSlowFade(false)
+       
       }
       console.log(menuBurger)
     }
 
+    
+
 
     return (
       <section className={style.navbarBackground}>
-        <div className={style.colourSwitch}>
-          <div
-            className={style.colourSwitchButtonBox}
-            onClick={() => {
-              ChangingLightOptions();
-            }}
-          >
-            <p>
-              <span className={style.eachLetter}>h</span>
-              <span className={style.eachLetter}>i</span>
-              <span className={style.eachLetter}>g</span>
-              <span className={style.eachLetter}>h</span>
-            </p>
-            <p>
-              <span className={style.eachLetter}>l</span>
-              <span className={style.eachLetter}>o</span>
-              <span className={style.eachLetter}>w</span>
-            </p>
-
+        <div className={style.navbarBackgroundVisible}>
+          <div className={style.colourSwitch}>
             <div
-              className={style.flipperButton}
-              style={
-                light
-                  ? {
-                      left: "50%",
-                      transition: "left .1s linear",
-                      filter:
-                        "drop-shadow(-4px 0px 7px rgba(255, 255, 255, .6))",
-                    }
-                  : {
-                      left: "0px",
-                      transition: "left .1s linear",
-                      filter:
-                        "drop-shadow(4px 0px 7px rgba(255, 255, 255, .6))",
-                    }
-              }
-            ></div>
+              className={style.colourSwitchButtonBox}
+              onClick={() => {
+                ChangingLightOptions();
+              }}
+            >
+              <p>
+                <span className={style.eachLetter}>h</span>
+                <span className={style.eachLetter}>i</span>
+                <span className={style.eachLetter}>g</span>
+                <span className={style.eachLetter}>h</span>
+              </p>
+              <p>
+                <span className={style.eachLetter}>l</span>
+                <span className={style.eachLetter}>o</span>
+                <span className={style.eachLetter}>w</span>
+              </p>
+
+              <div
+                className={style.flipperButton}
+                style={
+                  light
+                    ? {
+                        left: "50%",
+                        transition: "left .1s linear",
+                        filter:
+                          "drop-shadow(-4px 0px 7px rgba(255, 255, 255, .6))",
+                      }
+                    : {
+                        left: "0px",
+                        transition: "left .1s linear",
+                        filter:
+                          "drop-shadow(4px 0px 7px rgba(255, 255, 255, .6))",
+                      }
+                }
+              ></div>
+            </div>
+          </div>
+          <div className={style.burgerMenu}>
+            <div
+              className={style.burgerMenuBarContainer}
+              onClick={() => {
+                ChangingBurgerMenu();
+              }}
+            >
+              {!menuBurger ? (
+                <>
+                  <div
+                    className={`${
+                      light
+                        ? style.mobileBurgerBarLight
+                        : style.mobileBurgerBarDark
+                    }`}
+                  ></div>
+
+                  <div
+                    className={`${
+                      light
+                        ? style.mobileBurgerBarLight
+                        : style.mobileBurgerBarDark
+                    }`}
+                  ></div>
+                </>
+              ) : (
+                <>
+                  <div
+                    className={`${
+                      light
+                        ? style.mobileBurgerBarLeftLight
+                        : style.mobileBurgerBarLeftDark
+                    }`}
+                  ></div>
+
+                  <div
+                    className={`${
+                      light
+                        ? style.mobileBurgerBarRightLight
+                        : style.mobileBurgerBarRightDark
+                    }`}
+                  ></div>
+                </>
+              )}
+            </div>
           </div>
         </div>
-        <div className={style.burgerMenu}>
+        <div className={`${menuBurger?style.navbarBackgroundInvisible:style.hiddenVisible} ${slowFade?style.flowingOutAnimation:{}}`}>
           <div
-            className={
-               style.burgerMenuBarContainer
-            }
-            onClick={() => {
-              ChangingBurgerMenu();
-            }}
+            className={`${style.navbaroptionsLeft} ${style.flowingInAnimation}`}
           >
-            {!menuBurger ? (
-              <>
-                <div
-                  className={
-                    (style.mobileBurgerBar)
-                  }
-                ></div>
-                
-                <div
-                  className={
-                    (style.mobileBurgerBar)
-                  }
-                ></div>
-              </>
-            ) : (
-              <>
-                <div className={style.mobileBurgerBarLeft}></div>
-                
-                <div className={style.mobileBurgerBarRight}></div>
-              </>
-            )}
+            <div
+              className={`${style.navbaroptionsLeftHolder}${style.flowingInAnimation}`}
+            >
+              {menuOptions.map((input) => {
+                const inputSplit = input.split("");
+
+                return (
+                    <div key={input}>
+                  <p
+                    className={`${light ? style.menuLight : style.menuDark} ${
+                      style.menuInvisibleP
+                    }`}
+                  >
+                    {inputSplit.map((spanInput) => {
+                      return (
+                        
+                          <span className={style.eachLetterMenu}>
+                            {spanInput}
+                          </span>
+                        
+                      );
+                    })}
+                  </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div
+            className={`${style.navbaroptionsRight} ${style.flowingInAnimation}`}
+          >
+            <div
+              className={`${
+                light
+                  ? style.navbarVerticalBarLight
+                  : style.navbarVerticalBarDark
+              } `}
+            ></div>
           </div>
         </div>
       </section>
