@@ -45,8 +45,8 @@
 
 .colourSwitch{
     /* background-color: yellow; */
-    padding:.5rem;
-    margin-left:1rem;
+    padding:1rem;
+    margin-right:1rem;
 }
 
 .colourSwitchButtonBox{
@@ -101,7 +101,8 @@
         display:none;
     }
     .navbarBackground{
-        justify-content: flex-start;
+        justify-content: flex-end;
+        align-items: flex-end;
     }  
 }
 
@@ -224,7 +225,7 @@
 }
 .menuDark{
     color:#FF7A00;
-    text-shadow: -4px 7px 7px rgba(0, 0, 0, 0.6), 1px -1px 5px rgba(255, 255, 255, .25);
+    text-shadow: -1.5px 7px 7px rgba(0, 0, 0, 0.6), 1px -1px 5px rgba(255, 255, 255, .19);
     transition: all 1s ease-in-out;
 }
 
