@@ -21,7 +21,7 @@ function Navbar(){
         setSlowFade(true)
          setTimeout(() => {
            setMenuBurger(false);
-         }, 3000);
+         }, 1000);
       } else {
         setMenuBurger(true);
         setSlowFade(false)

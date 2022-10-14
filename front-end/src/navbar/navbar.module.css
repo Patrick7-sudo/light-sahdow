@@ -230,7 +230,8 @@
 }
 
 .menuDark:hover{
-    text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(255, 255, 255, .3);
+     text-shadow: -1.5px 7px 7px rgba(255, 255, 255, 0.19), 1px -1px 5px rgba(0, 0, 0, .6);
+    /* text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.3), 0px 0px 8px rgba(0, 0, 0, .4); */
     transition: all 1s ease-in-out;
 }
 
@@ -241,7 +242,7 @@
 }
 
 .menuLight:hover{
-    text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(255, 255, 255, .3);
+    text-shadow: -4px 7px 7px rgba(255, 255, 255, 0.4), 1px -1px 5px rgba(0, 0, 0, .3);
     transition: all 1s ease-in-out;
 }
 
@@ -266,10 +267,10 @@
 }
 
 .flowingInAnimation{
-    animation: 3s smoothFlowing ease-in-out forwards;
+    animation: 1s smoothFlowing ease-in-out forwards;
 }
 .flowingOutAnimation{
-    animation: 3s smoothFlowingOut ease-in-out forwards;
+    animation: 1s smoothFlowingOut ease-in-out forwards;
 }
 
 @keyframes smoothFlowing{
