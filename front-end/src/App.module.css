@@ -1,3 +1,14 @@
 .mainBackground{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 1s ease-in-out;
+}
+.lightBackground{
+    background-color: #525C4E;
+    transition: all 1s ease-in-out;
+}
+.darkBackground{
     background-color: #FF7A00;
+    transition: all 1s ease-in-out;
 }

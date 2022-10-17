@@ -1,7 +1,7 @@
 import style from "./navbar.module.css"
 import {useState} from "react"
 
-function Navbar(){
+function Navbar({mode}){
     const [light, setLight] =useState(false)
     const [menuBurger,setMenuBurger] = useState(false)
     const [slowFade, setSlowFade]= useState(true)
@@ -38,7 +38,11 @@ function Navbar(){
         <div className={style.navbarBackgroundVisible}>
           <div className={style.colourSwitch}>
             <div
-              className={style.colourSwitchButtonBox}
+              className={`${style.colourSwitchButtonBox} ${
+                mode
+                  ? style.colourSwitchButtonBoxLight
+                  : style.colourSwitchButtonBoxDark
+              }`}
               onClick={() => {
                 ChangingLightOptions();
               }}
@@ -56,18 +60,22 @@ function Navbar(){
               </p>
 
               <div
-                className={style.flipperButton}
+                className={`${style.flipperButton} ${
+                  mode
+                    ? style.colourSwitchButtonBoxLight
+                    : style.colourSwitchButtonBoxDark
+                }`}
                 style={
                   light
                     ? {
                         left: "50%",
-                        transition: "left .1s linear",
+                        // transition: "left .1s linear",
                         filter:
                           "drop-shadow(-4px 0px 7px rgba(255, 255, 255, .6))",
                       }
                     : {
                         left: "0px",
-                        transition: "left .1s linear",
+                        // transition: "left .1s linear",
                         filter:
                           "drop-shadow(4px 0px 7px rgba(255, 255, 255, .6))",
                       }
@@ -77,7 +85,11 @@ function Navbar(){
           </div>
           <div className={style.burgerMenu}>
             <div
-              className={style.burgerMenuBarContainer}
+              className={`${style.burgerMenuBarContainer} ${
+                mode
+                  ? style.colourSwitchButtonBoxLight
+                  : style.colourSwitchButtonBoxDark
+              } `}
               onClick={() => {
                 ChangingBurgerMenu();
               }}
@@ -106,7 +118,9 @@ function Navbar(){
                     className={`${
                       light
                         ? style.mobileBurgerBarLeftLight
-                        : style.mobileBurgerBarLeftDark
+                        : mode
+                        ? style.mobileBurgerBarLeftDark
+                        : style.mobileBurgerBarLeftDarkMode
                     }`}
                   ></div>
 
@@ -114,7 +128,9 @@ function Navbar(){
                     className={`${
                       light
                         ? style.mobileBurgerBarRightLight
-                        : style.mobileBurgerBarRightDark
+                        : mode
+                        ? style.mobileBurgerBarRightDark
+                        : style.mobileBurgerBarRightDarkMode
                     }`}
                   ></div>
                 </>
@@ -122,7 +138,11 @@ function Navbar(){
             </div>
           </div>
         </div>
-        <div className={`${menuBurger?style.navbarBackgroundInvisible:style.hiddenVisible} ${slowFade?style.flowingOutAnimation:{}}`}>
+        <div
+          className={`${
+            menuBurger ? style.navbarBackgroundInvisible : style.hiddenVisible
+          } ${slowFade ? style.flowingOutAnimation : {}}`}
+        >
           <div
             className={`${style.navbaroptionsLeft} ${style.flowingInAnimation}`}
           >
@@ -133,22 +153,20 @@ function Navbar(){
                 const inputSplit = input.split("");
 
                 return (
-                    <div key={input}>
-                  <p
-                    className={`${light ? style.menuLight : style.menuDark} ${
-                      style.menuInvisibleP
-                    }`}
-                  >
-                    {inputSplit.map((spanInput) => {
-                      return (
-                        
+                  <div key={input}>
+                    <p
+                      className={`${light ? mode?style.menuLight:style.menuLightDarkMode : mode?style.menuDark:style.menuDarkMode} ${
+                        style.menuInvisibleP
+                      }`}
+                    >
+                      {inputSplit.map((spanInput) => {
+                        return (
                           <span className={style.eachLetterMenu}>
                             {spanInput}
                           </span>
-                        
-                      );
-                    })}
-                  </p>
+                        );
+                      })}
+                    </p>
                   </div>
                 );
               })}
@@ -161,7 +179,9 @@ function Navbar(){
               className={`${
                 light
                   ? style.navbarVerticalBarLight
-                  : style.navbarVerticalBarDark
+                  : mode
+                  ? style.navbarVerticalBarDark
+                  : style.navbarVerticalBarDarkMode
               } `}
             ></div>
           </div>

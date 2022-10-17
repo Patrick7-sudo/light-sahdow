@@ -1,0 +1,66 @@
+.FooterMain{
+    /* background-color: blue; */
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.moonContainer{
+    /* background-color:red; */
+    min-width:200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.moon{
+    width:40px;
+    height: 40px;
+    background-color: #FF7A00;
+    border-radius: 50%;
+    box-shadow: -7px 0px 0 5px #f4f3e0,-4px 7px 7px rgba(0, 0, 0, 0.4), -1px 1px 5px rgba(255, 255, 255, 0.4);
+    transition: all 1s ease-in-out;
+
+}
+/* .moon:hover{
+    background-color: #FF7A00;
+     border-radius: 50%; 
+    box-shadow: 0px 0px 0 5px #FF7A00,0 0 60px 30px #fff,
+    0 0 10px 6px #f0f,
+    0 0 15px 9px #0ff;;
+    transition: all 1s ease-in-out;
+} */
+.sun{
+    width:40px;
+    height: 40px;
+    background-color:#F28C38;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0 5px #F28C38,0 0 60px 12px #fff,
+    0 0 10px 6px #f0f,
+    0 0 15px 9px #0ff,0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px rgba(255, 255, 255, 0.2);;
+    transition: all 1s ease-in-out;
+}
+
+@media screen and (max-width: 834px) {
+    .moon{
+        width:20px;
+        height: 20px;
+    }
+
+    .sun{
+        width:20px;
+        height: 20px;
+    }
+    .moonContainer{
+        min-width:100px;
+        height: 50px;
+    }
+}
+/* .sun:hover{
+    width:40px;
+    height: 40px;
+    background-color: #FF7A00;
+    border-radius: 50%;
+    box-shadow: -7px 0px 0 5px #f4f3e0;
+    transition: all 1s ease-in-out;
+} */
