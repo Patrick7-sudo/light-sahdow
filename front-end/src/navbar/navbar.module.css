@@ -26,7 +26,7 @@
 }
 .navbaroptionsLeft{
     /* background-color: bisque; */
-    width:50%;
+    width:60%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@
 }
 .navbaroptionsRight{
     /* background-color: red; */
-    width:38%;
+    width:20%;
     height: 100%;
     display: flex;
     justify-content: flex-end;
@@ -254,8 +254,10 @@
     text-transform: capitalize;
     font-size: 48px;
     font-weight: 400;
-    /* background-color: aqua; */
+    background-color: aqua;
     padding-left:10px;
+    padding-right:10px;
+    margin:1rem;
 }
 .menuDark{
     color:#FF7A00;
