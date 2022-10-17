@@ -1,10 +1,11 @@
 import style from "./navbar.module.css"
-import {useState} from "react"
+import {useState, useEffect} from "react"
 
 function Navbar({mode}){
     const [light, setLight] =useState(false)
     const [menuBurger,setMenuBurger] = useState(false)
     const [slowFade, setSlowFade]= useState(true)
+    const [width, setWidth] = useState("")
 
     const menuOptions=['home','about me','services','projects','contact me']
 
@@ -26,9 +27,23 @@ function Navbar({mode}){
         setMenuBurger(true);
         setSlowFade(false)
        
-      }
-      console.log(menuBurger)
+      }  
     }
+
+    useEffect(() => {
+      function widthDynamics() {
+        setWidth(window.innerWidth);
+      }
+
+      window.addEventListener("resize", widthDynamics);
+      widthDynamics();
+      
+      if (width > 834) {
+        setMenuBurger(false);
+      }
+
+      console.log(width);
+    }, [width]);
 
     
 
